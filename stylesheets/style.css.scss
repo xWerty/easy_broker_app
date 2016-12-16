@@ -1,0 +1,41 @@
+h1,h2,h3,h4,p{
+	text-align: center;
+}
+li{
+	text-decoration:none;
+	list-style: none;
+}
+.navbar{
+	margin-bottom: 0;
+}
+
+.back_img{
+	background-image: url(http://static.squarespace.com/static/53694489e4b0c31433cc72d3/5390c969e4b049a23aec81be/5390e5dee4b04a87d8e35fdd/1402004964667/LyonPorter_WilliamsburgB&B_HighRes-10.jpg?format=1000w);
+	background-repeat: no-repeat;
+	background-position: top center; 
+	background-size: cover;
+	
+}
+
+.be-white{
+	color: #FFFFFF;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.form-size{
+	width: 30%;
+	
+}
+
+.opacity-thing{
+	width: 100%;
+	height: 100%;
+	background-color: grey; 
+	opacity: 0.5;
+}
+
+.btn-size{
+	width: 10%;
+}

@@ -1,0 +1,76 @@
+<div class="form-group container ">
+  <div class="be-white">
+      <%= form_for @property, html: {multipart: true} do |f| %>
+      <% if @property.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+          <ul>
+          <% @property.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field form-control form-size">
+        <%= f.label :title %>
+        <br>
+        <br>
+        <%= f.text_field :title %>
+        <br>
+      </div>
+      <br>
+
+      <div class="field">
+        <br>
+        <br>
+        <%= f.label "Types" %>
+        <%= f.collection_check_boxes :kind_ids, Kind.all, :id, :name do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+      </div>
+      <br>
+
+      <div class="field form-control form-size">
+        
+        <%= f.label :description %>
+        <br>
+        <br>
+        <%= f.text_area :description %>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="field">
+        <%= f.label "Features" %><br />
+        <%= f.collection_check_boxes :feature_ids, Feature.all, :id, :name do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+      </div>
+      <br>
+      <div class="field form-control form-size">
+        <%= f.label "Photos of the Property" %>
+        <br>
+        <br>
+        <%= f.file_field :image %>
+        <br>
+      </div>
+      <br>
+      <br>
+      <br>
+    
+      <div class="actions btn-default btn-size">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
